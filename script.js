@@ -14,6 +14,6 @@ generateSquares();
 const color=document.querySelectorAll("div.square");
 color.forEach((square) => {
     square.addEventListener("mouseleave", () => {
-        square.style.background=`rgb(${204},${153},${255})`;
+        square.style.background=`rgb(${255},${204},${229})`;
     });
 });
