@@ -7,6 +7,26 @@
     grid-template-rows: repeat(16, 60px);
 }
 
+.button {
+    background-color: rgb(255,204,229);
+    border: solid black;
+    color: black;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 100px auto;
+    transition-duration: 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    background-color:white;
+}
+
 .square {
     background-color: rgb(255, 255, 255);
 }
