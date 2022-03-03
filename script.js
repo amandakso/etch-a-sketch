@@ -28,32 +28,20 @@ button.addEventListener("click", () => {
 });
 //prompt question is not retaining num
 function promptQuestion() {
-    let num=window.prompt("How many squares per side?");
-    while (Number.isSafeInteger(parseFloat(num))==false|| parseFloat(num)<1 || parseFloat(num)>100)
-    if (Number.isSafeInteger(parseFloat(num))==true && parseFloat(num)>=1 && parseFloat(num)<= 100) {
-        console.log
-    } else {
-        num=window.prompt("Invalid answer. How many squares per side? Pick number between 1 & 100");
-    };
+    do {
+        num=window.prompt("How many squares per side? (1-100 squares allowed)");
+    }while (Number.isSafeInteger(parseFloat(num))==false|| parseFloat(num)<1 || parseFloat(num)>100)
+   let val=parseFloat(num);
+    console.log(val);
+    resetSquares(val);
 };
 
-/*
-button.addEventListener("click", () => {
-    let num=window.prompt("How many squares per side?");
-    while (Number.isSafeInteger(parseFloat(num))==false|| parseFloat(num)<1 || parseFloat(num)>100)
-    if (Number.isSafeInteger(parseFloat(num))==true && parseFloat(num)>=1 && parseFloat(num)<= 100) {
-        console.log(num);
-    } else {
-        num=window.prompt("Invalid answer. How many squares per side? Pick number between 1 & 100");
-    };
-});
-*/
 
 function resetSquares(val) {
-    let col=100/parseFloat(val);
-    let change=document.getElementById(".container");
-    change.style.gridTemplateColumns=`repeat(parseFloat(${val}),${col}%)`;
-    change.style.gridTemplateRows=`repeat(parseFloat(${val}),${col}%)`;
+    let col=720/val;
+    let change=document.getElementById("grid");
+    change.style.gridTemplateColumns=`repeat(${val}, ${col}px)`;
+    change.style.gridTemplateRows=`repeat(${val}, ${col}px)`;
     for(i=0; i<(val * val); i++) {
         square=document.createElement("div");
         square.classList.add("square");
