@@ -1,4 +1,5 @@
 const container=document.querySelector(".container");
+const button=document.querySelector(".button");
 
 let numberOfSquares= 0;
 function generateSquares() {
@@ -16,4 +17,8 @@ color.forEach((square) => {
     square.addEventListener("mouseleave", () => {
         square.style.background=`rgb(${255},${204},${229})`;
     });
+});
+
+button.addEventListener("click", () => {
+    let reset=prompt("How many squares per side?");
 });
