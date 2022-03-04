@@ -1,25 +1,25 @@
 const container=document.querySelector(".container");
 const button=document.querySelector(".button");
 
+
 function generateSquares(num) {
     let x=parseFloat(num);
     for (i=0; i<(x * x); i++){
         const square=document.createElement("div");
         square.classList.add("square");
         container.appendChild(square);  
-        square.addEventListener("mouseover", () => {
-            let a= getRandomArbitrary(0,255);
-            let b= getRandomArbitrary(0,255);
-            let c= getRandomArbitrary(0,255);
-        square.style.background=`rgb(${a},${b},${c})`;
+        square.addEventListener("mouseover", (event) => {
+            event.target.style.backgroundColor='black';
+            let opacity= Number(event.target.style.opacity);
+            if (opacity< 1) {
+                opacity=opacity + 0.1;
+            }
+            event.target.style.opacity= opacity;
         });
-    }
-};
-generateSquares(16);
+        };
+    };
 
- function getRandomArbitrary(min, max) {
-     return Math.random() *(max-min) + min;
- };
+generateSquares(16);
 
 
 button.addEventListener("click", () => {
@@ -30,7 +30,7 @@ button.addEventListener("click", () => {
     promptQuestion();
 
 });
-//prompt question is not retaining num
+
 function promptQuestion() {
     do {
         num=window.prompt("How many squares per side? (1-100 squares allowed)");
