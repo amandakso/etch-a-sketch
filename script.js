@@ -8,13 +8,18 @@ function generateSquares(num) {
         square.classList.add("square");
         container.appendChild(square);  
         square.addEventListener("mouseover", () => {
-        square.style.background=`rgb(${255},${204},${229})`;
+            let a= getRandomArbitrary(0,255);
+            let b= getRandomArbitrary(0,255);
+            let c= getRandomArbitrary(0,255);
+        square.style.background=`rgb(${a},${b},${c})`;
         });
     }
 };
 generateSquares(16);
 
- 
+ function getRandomArbitrary(min, max) {
+     return Math.random() *(max-min) + min;
+ };
 
 
 button.addEventListener("click", () => {
