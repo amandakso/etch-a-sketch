@@ -1,23 +1,22 @@
 const container=document.querySelector(".container");
 const button=document.querySelector(".button");
 
-function generateSquares() {
-    for (i=0; i<(16 * 16); i++){
-        square=document.createElement("div");
+function generateSquares(num) {
+    let x=parseFloat(num);
+    for (i=0; i<(x * x); i++){
+        const square=document.createElement("div");
         square.classList.add("square");
-        container.appendChild(square);
-        
+        container.appendChild(square);  
+        square.addEventListener("mouseover", () => {
+        square.style.background=`rgb(${255},${204},${229})`;
+        });
     }
 };
-generateSquares();
+generateSquares(16);
+
+ 
 
 
-const squares=document.querySelectorAll("div.square");
-squares.forEach((square) => {
-    square.addEventListener("mouseover", () => {
-        square.style.background=`rgb(${255},${204},${229})`;
-    });
-});
 button.addEventListener("click", () => {
     const grid=document.getElementById("grid");
     while(grid.hasChildNodes()) {
@@ -32,19 +31,14 @@ function promptQuestion() {
         num=window.prompt("How many squares per side? (1-100 squares allowed)");
     }while (Number.isSafeInteger(parseFloat(num))==false|| parseFloat(num)<1 || parseFloat(num)>100)
    let val=parseFloat(num);
-    console.log(val);
     resetSquares(val);
+    generateSquares(val);
 };
 
-
-function resetSquares(val) {
+function resetSquares(num) {
+    let val=parseFloat(num);
     let col=720/val;
     let change=document.getElementById("grid");
     change.style.gridTemplateColumns=`repeat(${val}, ${col}px)`;
     change.style.gridTemplateRows=`repeat(${val}, ${col}px)`;
-    for(i=0; i<(val * val); i++) {
-        square=document.createElement("div");
-        square.classList.add("square");
-        container.appendChild(square);
-    };
 };
