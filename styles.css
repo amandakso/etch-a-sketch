@@ -9,7 +9,7 @@
 }
 
 .button {
-    background-color: rgb(255,204,229);
+    background-color: rgb(255, 255, 255);
     border: solid black;
     color: black;
     padding: 12px 28px;
@@ -25,7 +25,34 @@
 }
 
 .button:hover {
-    background-color:white;
+    animation: change-color 8s infinite;
+}
+
+@keyframes change-color {
+    0% {
+        background-color: white;
+    }
+    12.5% {
+        background-color: red;
+    }    
+    25% {
+        background-color: orange;
+    }
+    37.5% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: green;
+    }
+    62.5% {
+        background-color: blue;
+    }
+    75% {
+        background-color: #4b0082;
+    }
+    87.5% {
+        background-color: #8F00FF;
+    }
 }
 
 .square {
