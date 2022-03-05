@@ -8,6 +8,15 @@
     margin: auto;
 }
 
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    font-family: 'Butterfly Kids', cursive;
+    font-size: 64px;
+}
+
 .button {
     background-color: rgb(255, 255, 255);
     border: solid black;
@@ -24,6 +33,8 @@
     align-items: center;
 }
 
+/*
+For rainbow animation change
 .button:hover {
     animation: change-color 8s infinite;
 }
@@ -54,6 +65,8 @@
         background-color: #8F00FF;
     }
 }
+
+*/
 
 .square {
     background-color: rgb(255, 255, 255);
