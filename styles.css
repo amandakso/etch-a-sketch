@@ -16,6 +16,12 @@
     font-family: 'Butterfly Kids', cursive;
     font-size: 64px;
 }
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 30px auto;
+}
 
 .button {
     background-color: rgb(255, 255, 255);
@@ -26,7 +32,7 @@
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    margin: 30px auto;
+    margin: 0;
     transition-duration: 0.4s;
     display: flex;
     justify-content: center;
