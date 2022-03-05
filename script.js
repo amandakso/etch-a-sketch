@@ -42,7 +42,7 @@ function promptQuestion() {
 
 function resetSquares(num) {
     let val=parseFloat(num);
-    let col=720/val;
+    let col=480/val;
     let change=document.getElementById("grid");
     change.style.gridTemplateColumns=`repeat(${val}, ${col}px)`;
     change.style.gridTemplateRows=`repeat(${val}, ${col}px)`;
