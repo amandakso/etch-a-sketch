@@ -73,6 +73,11 @@ For rainbow animation change
 }
 
 */
+#panda {
+    width: 125px;
+    height: auto;
+    margin: auto;
+    display: block;
 
 .square {
     background-color: rgb(255, 255, 255);
