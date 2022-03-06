@@ -40,7 +40,15 @@
     align-items: center;
 }
 
-
+.black:hover {
+    color: white;
+    background-color: black;
+}
+.blue:hover {
+    color: white;
+    background-color: blue;
+    border: solid blue;
+}
 .pastel:hover {
     animation: pastel 8s infinite;
 }
