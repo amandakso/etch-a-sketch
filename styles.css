@@ -41,8 +41,38 @@
 }
 
 
+.pastel:hover {
+    animation: pastel 8s infinite;
+}
 .rainbow:hover {
     animation: rainbow 8s infinite;
+}
+
+@keyframes pastel {
+    0% {
+        background-color: white;
+    }
+    12.5% {
+        background-color: #ffc9de;
+    }
+    25% {
+        background-color: #fdd97c;
+    }
+    37.5% {
+        background-color: #fbfdaa;
+    }
+    50% {
+        background-color: #c1f0b2;
+    }
+    62.5% {
+        background-color: #b2e4f0;
+    }
+    75% {
+        background-color: #ccdcfd;
+    }
+    87.5% {
+        background-color: #d6b2f0;
+    }
 }
 
 @keyframes rainbow {
