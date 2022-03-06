@@ -50,9 +50,11 @@
     border: solid blue;
 }
 .pastel:hover {
+    border: none;
     animation: pastel 8s infinite;
 }
 .rainbow:hover {
+    border: none;
     animation: rainbow 8s infinite;
 }
 
