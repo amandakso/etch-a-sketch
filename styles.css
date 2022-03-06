@@ -41,14 +41,11 @@
 }
 
 
-
-/*
-For rainbow animation change
-.button:hover {
-    animation: change-color 8s infinite;
+.rainbow:hover {
+    animation: rainbow 8s infinite;
 }
 
-@keyframes change-color {
+@keyframes rainbow {
     0% {
         background-color: white;
     }
@@ -75,7 +72,6 @@ For rainbow animation change
     }
 }
 
-*/
 .footer {
     display: flex;
     justify-content: center;
