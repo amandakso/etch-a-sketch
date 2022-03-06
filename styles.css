@@ -57,6 +57,16 @@
     border: none;
     animation: rainbow 8s infinite;
 }
+.gray:hover {
+    color: #555555;
+    background-color: #D3D3D3;
+    border: #36454F;
+}
+
+
+.eraser:hover {
+    color: white;
+}
 
 @keyframes pastel {
     0% {
