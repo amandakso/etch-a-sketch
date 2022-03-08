@@ -22,6 +22,9 @@ function generateSquares(num) {
 
 generateSquares(16);
 
+function pickColor() {
+    
+}
 
 startover.addEventListener("click", () => {
     const grid=document.getElementById("grid");
