@@ -1,5 +1,6 @@
 const container=document.querySelector(".container");
 const button=document.querySelector(".button");
+const startover=document.querySelector(".startover");
 
 
 function generateSquares(num) {
@@ -22,7 +23,7 @@ function generateSquares(num) {
 generateSquares(16);
 
 
-button.addEventListener("click", () => {
+startover.addEventListener("click", () => {
     const grid=document.getElementById("grid");
     while(grid.hasChildNodes()) {
         grid.removeChild(grid.firstChild);
