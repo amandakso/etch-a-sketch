@@ -7,7 +7,7 @@ const pastel=document.querySelector(".pastel");
 const rainbow=document.querySelector(".rainbow");
 const gray=document.querySelector(".gray");
 const eraser=document.querySelector(".eraser");
-const ink=document.querySelector(".color");
+let paint= "black";
 
 function generateSquares(num) {
     let x=parseFloat(num);
@@ -19,29 +19,19 @@ function generateSquares(num) {
         paintSquare();
     };
 
- /*   square.addEventListener("mouseover", (event) => {
-        event.target.style.backgroundColor='black';
-        let opacity= Number(event.target.style.opacity);
-        if (opacity< 1) {
-            opacity=opacity + 0.1;
-        }
-        event.target.style.opacity= opacity;
- */
-
 generateSquares(16);
 
 
 
 
 function paintSquare() {
-    let squares=container.querySelectorAll(".square");
-    squares.forEach((square)=> {
-        square.addEventListener("mouseover", ()=> {
-            square.classList.add("painted-square");
-            square.style.backgroundColor="black";
-        });
-    });
+    const squares=Array.from(document.querySelectorAll(".square"));
+    squares.forEach((square)=> square.addEventListener("mouseover", () => {
+        square.style.background= paint;
+    }));
 };
+
+
 
 
 
