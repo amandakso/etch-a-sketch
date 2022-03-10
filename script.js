@@ -16,6 +16,7 @@ function generateSquares(num) {
         square.classList.add("square");
         container.appendChild(square);  
         };
+        paintSquare();
     };
 
  /*   square.addEventListener("mouseover", (event) => {
@@ -29,11 +30,11 @@ function generateSquares(num) {
 
 generateSquares(16);
 
-let squares=container.querySelectorAll(".square");
 
-paintSquare();
+
 
 function paintSquare() {
+    let squares=container.querySelectorAll(".square");
     squares.forEach((square)=> {
         square.addEventListener("mouseover", ()=> {
             square.classList.add("painted-square");
