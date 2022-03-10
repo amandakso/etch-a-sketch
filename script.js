@@ -53,7 +53,18 @@ eraser.addEventListener("click", () => {
     removeListener();
     paint="white";
     paintSquare();
-})
+});
+
+rainbow.addEventListener("click", () => {
+    removeListener();
+    const squares=Array.from(document.querySelectorAll(".square"));
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            paint= pickRainbowColor();
+            square.style.backgroundColor= paint;
+        })
+    });
+});
 
 
 
@@ -65,6 +76,17 @@ startover.addEventListener("click", () => {
     promptQuestion();
 
 });
+
+function getRandomArbitrary(min, max) {
+    return Math.random() *(max-min) + min;
+};
+
+function pickRainbowColor() {
+    let a= getRandomArbitrary(0,255);
+    let b= getRandomArbitrary(0,255);
+    let c= getRandomArbitrary(0,255);
+    return `rgb(${a}, ${b}, ${c})`;
+}
 
 function promptQuestion() {
     do {
