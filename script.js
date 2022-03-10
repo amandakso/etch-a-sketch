@@ -4,7 +4,7 @@ const startover=document.querySelector(".startover");
 const black=document.querySelector(".black");
 const blue=document.querySelector(".blue");
 const pastel=document.querySelector(".pastel");
-const rainbow=docmument.querySelector(".rainbow");
+const rainbow=document.querySelector(".rainbow");
 const gray=document.querySelector(".gray");
 const eraser=document.querySelector(".eraser");
 const ink=document.querySelector(".color");
@@ -15,8 +15,6 @@ function generateSquares(num) {
         const square=document.createElement("div");
         square.classList.add("square");
         container.appendChild(square);  
-        square.addEventListener("mouseover", paintSquare());
-        });
         };
     };
 
@@ -31,21 +29,20 @@ function generateSquares(num) {
 
 generateSquares(16);
 
-function paintSquare(event) {
-        switch (selectColor()) {
-            case black:
-                event.target.style.backgroundColor="black";
-                break;
-            case blue:
-                event.target.style.backgroundColor="blue";
-            default:
-                event.target.style.backgroundColor="black";
-        };
+let squares=container.querySelectorAll(".square");
 
+paintSquare();
+
+function paintSquare() {
+    squares.forEach((square)=> {
+        square.addEventListener("mouseover", ()=> {
+            square.classList.add("painted-square");
+            square.style.backgroundColor="black";
+        });
+    });
 };
-function selectColor() {
-    
-}
+
+
 
 startover.addEventListener("click", () => {
     const grid=document.getElementById("grid");
