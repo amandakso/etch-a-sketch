@@ -49,6 +49,12 @@ blue.addEventListener("click", () => {
     paintSquare();
 });
 
+eraser.addEventListener("click", () => {
+    removeListener();
+    paint="white";
+    paintSquare();
+})
+
 
 
 startover.addEventListener("click", () => {
