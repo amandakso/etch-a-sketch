@@ -22,8 +22,9 @@ generateSquares(16);
 
 function paintSquare() {
     squares=container.querySelectorAll(".square");
-    squares.forEach((square)=> square.addEventListener("mouseover", () =>
-    square.style.backgroundColor= "black"));
+    squares.forEach((square)=> square.addEventListener("mouseover", () =>{
+    square.style.backgroundColor= `rgb(${0},${0},${0})`;
+}));
 };
 
 black.addEventListener("click", () => {
@@ -40,35 +41,52 @@ eraser.addEventListener("click", () => {
 
 random.addEventListener("click", () => {
     paintRandom();
-})
+});
 
 rainbow.addEventListener("click", () => {
     paintRainbow();
 });
 
+gray.addEventListener("click", () => {
+    paintGray();
+});
+
 function paintBlue() {
     squares=container.querySelectorAll(".square");
-    squares.forEach((square)=> square.addEventListener("mouseover", () =>
-    square.style.backgroundColor= "blue"));
+    squares.forEach((square)=> square.addEventListener("mouseover", () => {
+    square.style.backgroundColor= "blue";
+}));
 };
 
 function paintWhite() {
     squares=container.querySelectorAll(".square");
-    squares.forEach((square)=> square.addEventListener("mouseover", () =>
-    square.style.backgroundColor= "white"));
+    squares.forEach((square)=> square.addEventListener("mouseover", () => {
+    square.style.backgroundColor= "white";
+}));
 };
 
 function paintRandom() {
     let color= pickRainbowColor();
     squares=container.querySelectorAll(".square");
-    squares.forEach((square)=> square.addEventListener("mouseover", () =>
-    square.style.backgroundColor= color));
+    squares.forEach((square)=> square.addEventListener("mouseover", () => {
+    square.style.backgroundColor= color;
+}));
 }
 
 function paintRainbow() {
     squares=container.querySelectorAll(".square");
-    squares.forEach((square)=> square.addEventListener("mouseover", () =>
-    square.style.backgroundColor= pickRainbowColor()));
+    squares.forEach((square)=> square.addEventListener("mouseover", () => {
+    square.style.backgroundColor= pickRainbowColor();
+}));
+};
+
+function paintGray() {
+    squares=container.querySelectorAll(".square");
+    squares.forEach((square)=> square.addEventListener("mouseover", () => {
+        square.style.backgroundColor="black";
+        square.style.opacity=+square.style.opacity+ 0.1;
+    console.log(square.style.opacity);
+}));
 };
 
 startover.addEventListener("click", () => {
@@ -88,7 +106,7 @@ function pickRainbowColor() {
     let b= getRandomArbitrary(0,255);
     let c= getRandomArbitrary(0,255);
     return `rgb(${a}, ${b}, ${c})`;
-}
+};  
 
 function promptQuestion() {
     do {
