@@ -7,6 +7,7 @@ const random=document.querySelector(".random");
 const rainbow=document.querySelector(".rainbow");
 const gray=document.querySelector(".gray");
 const eraser=document.querySelector(".eraser");
+
 function generateSquares(num) {
     let x=parseFloat(num);
     for (i=0; i<(x * x); i++){
@@ -19,22 +20,11 @@ function generateSquares(num) {
 
 generateSquares(16);
 
-
-
 function paintSquare() {
     squares=container.querySelectorAll(".square");
     squares.forEach((square)=> square.addEventListener("mouseover", () =>
     square.style.backgroundColor= "black"));
 };
-
-/*
-function removeListener() {
-    const squares=container.querySelectorAll(".square");
-    squares.forEach((square)=> square.removeEventListener("mouseover", () =>{
-    square.style.backgroundColor= paint}));
-}; */
-
-
 
 black.addEventListener("click", () => {
     paintSquare();
@@ -48,10 +38,13 @@ eraser.addEventListener("click", () => {
     paintWhite();
 });
 
+random.addEventListener("click", () => {
+    paintRandom();
+})
+
 rainbow.addEventListener("click", () => {
     paintRainbow();
 });
-
 
 function paintBlue() {
     squares=container.querySelectorAll(".square");
@@ -65,6 +58,13 @@ function paintWhite() {
     square.style.backgroundColor= "white"));
 };
 
+function paintRandom() {
+    let color= pickRainbowColor();
+    squares=container.querySelectorAll(".square");
+    squares.forEach((square)=> square.addEventListener("mouseover", () =>
+    square.style.backgroundColor= color));
+}
+
 function paintRainbow() {
     squares=container.querySelectorAll(".square");
     squares.forEach((square)=> square.addEventListener("mouseover", () =>
@@ -77,7 +77,6 @@ startover.addEventListener("click", () => {
         grid.removeChild(grid.firstChild);
     };
     promptQuestion();
-
 });
 
 function getRandomArbitrary(min, max) {
